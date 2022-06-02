@@ -33,7 +33,7 @@ const listBelanjaan = (data) =>
       nama[i] = data[i]['nama'];
       kuantitas[i] = data[i]['kuantitas'];
       
-      hasilPertama[i] = "- "+nama[i]+" x "+kuantitas[i];
+      hasilPertama[i] = "- "+nama[i]+" X "+kuantitas[i];
   }
 
   return hasilPertama;
