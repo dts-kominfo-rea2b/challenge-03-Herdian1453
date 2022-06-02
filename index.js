@@ -22,7 +22,7 @@ const dataBelanjaan = [
 
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaanBarang = (data) => {
+const listBelanjaan = (data) => {
   let dt =[];
   data.forEach(e => {
       dt.push(`- ${e.nama} x ${e.kuantitas}`)
@@ -31,7 +31,7 @@ const listBelanjaanBarang = (data) => {
 };
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaanBarang = (data) => {
+const totalBelanjaan = (data) => {
   let dt =0;
   data.forEach(e => {
       dt += e.harga * e.kuantitas
@@ -44,9 +44,9 @@ const main = () => {
   console.log("Selamat datang customer");
 
   console.log("Belanjaan Anda adalah:");
-  console.log(listBelanjaanBarang?.(dataBelanjaan)?.join("\n"));
+  console.log(listBelanjaan?.(dataBelanjaan)?.join("\n"));
   console.log(
-    "\nTotal Belanjaan Anda adalah Rp. " + totalBelanjaanBarang?.(dataBelanjaan)
+    "\nTotal Belanjaan Anda adalah Rp. " + totalBelanjaan?.(dataBelanjaan)
   );
 };
 
@@ -54,6 +54,6 @@ main();
 
 module.exports = {
   dataBelanjaan,
-  listBelanjaanBarang,
-  totalBelanjaanBarang,
+  listBelanjaan,
+  totalBelanjaan,
 };
