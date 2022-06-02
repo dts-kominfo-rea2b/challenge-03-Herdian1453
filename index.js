@@ -26,7 +26,7 @@ const listBelanjaan = (dataList) => {
     return `- ${dataBelanjaan.nama} x ${dataBelanjaan.kuantitas}`;
   });
 }
-
+console.log(dataBelanjaan);
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
 const totalBelanjaan = (dataTotal) => {
@@ -39,8 +39,7 @@ const totalBelanjaan = (dataTotal) => {
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
-  console.log("Selamat datang customer");
-
+  console.log("Selamat datang customer \n");
   console.log("Belanjaan Anda adalah:");
   console.log(listBelanjaan?.(dataBelanjaan)?.join("\n"));
   console.log(
