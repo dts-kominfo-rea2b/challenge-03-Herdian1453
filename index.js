@@ -21,49 +21,21 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = (data) => 
-{
-  let nama = [];
-  let kuantitas = [];
-  let hasilPertama = [];
-  let panjangData = data.length;
-
-  for (let i = 0; i < panjangData; i++)
-  {
-      nama[i] = data[i]['nama'];
-      kuantitas[i] = data[i]['kuantitas'];
-      
-      hasilPertama[i] = "- "+nama[i]+" X "+kuantitas[i];
-  }
-
-  return hasilPertama;
+const listBelanjaan = (dataList) => {
+  return dataList.map((dataBelanjaan) => {
+    return `- ${dataBelanjaan.nama} x ${dataBelanjaan.kuantitas}`;
+  });
 }
+
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = (data) => 
-{
-    let total = 0;
-    let harga = [];
-    let kuantitas = [];
-    let nominal = [];
-    let hasilKedua = 0;
-    let panjangData = data.length;
-
-    for (let i = 0; i < panjangData; i++)
-    {
-        harga[i] = data[i]['harga'];
-        kuantitas[i] = data[i]['kuantitas'];
-
-        nominal[i] = harga[i]*kuantitas[i];
-
-        total += nominal[i];
-        
-        hasilKedua = total;
-    }
-
-    return hasilKedua;
+const totalBelanjaan = (dataTotal) => {
+  let total = 0;
+  dataTotal.forEach((dataBelanjaan) => {
+    total += dataBelanjaan.harga * dataBelanjaan.kuantitas;
+  });
+  return total;
 }
-
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
@@ -78,7 +50,7 @@ const main = () => {
 
 main();
 
-exports = {
+module.exports = {
   dataBelanjaan,
   listBelanjaan,
   totalBelanjaan,
